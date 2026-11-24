@@ -1,0 +1,27 @@
+# LaTeX intermediate & build artifacts
+*.aux
+*.bbl
+*.blg
+*.bcf
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+
+# Uncomment line below if you do not want to track compiled PDFs in Git
+# *.pdf
+
+# OS files
+.DS_Store
+Thumbs.db

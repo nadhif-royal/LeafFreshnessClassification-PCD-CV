@@ -1,0 +1,40 @@
+# ==============================================================================
+# LaTeX Requirements - Template_LaTeX_Final_Project_PCD_CV
+# ==============================================================================
+# Daftar paket TeX Live (tlmgr) yang dibutuhkan untuk mengompilasi `main.tex`.
+#
+# Catatan:
+# - Tidak menggunakan Python `pip`; kebutuhan LaTeX berasal dari distribusi TeX.
+# - Jika memakai Full TeX Live / Full MacTeX / MiKTeX (auto-install), semua paket
+#   di bawah sudah tersedia secara default.
+# - Jika memakai BasicTeX (macOS) atau TeX Live minimal, jalankan:
+#     sudo tlmgr update --self
+#     sudo tlmgr install $(grep -vE '^\s*(#|$)' latex-requirements.txt)
+# - Di Ubuntu/Debian:
+#     sudo apt install texlive-latex-base texlive-latex-recommended \
+#       texlive-latex-extra texlive-fonts-recommended texlive-publishers \
+#       texlive-science latexmk
+# ==============================================================================
+
+# Build automation (opsional tapi sangat disarankan untuk VS Code LaTeX Workshop)
+latexmk
+
+# Packages used in main.tex & references.bib
+amsmath
+amsfonts
+booktabs
+caption
+cite
+enumitem
+float
+geometry
+graphics
+hyperref
+ieeetran
+microtype
+multirow
+psnfss
+siunitx
+tools
+url
+xcolor

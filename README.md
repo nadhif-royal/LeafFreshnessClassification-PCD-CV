@@ -103,9 +103,8 @@ To evaluate the effectiveness of Digital Image Processing prior to classificatio
 │   ├── feature_extractor.py        # Color and texture feature extraction functions
 │   └── demo_app.py                 # Local OpenCV script for live leaf freshness inference
 ├── models/                         # Saved model weights (.pkl, .pt, .h5)
-├── reports/
-│   ├── latex_report/               # LaTeX source files and figures for the final academic paper
-│   └── presentations/              # Progress 1, 2, 3, and Final presentation slide decks
+├── latex/                          # LaTeX source files, requirements, and figures for the final academic paper
+├── Presentation/                   # Progress 1, 2, 3, and Final presentation slide decks
 ├── requirements.txt                # Python dependencies
 └── README.md                       # Project documentation
 
@@ -145,6 +144,9 @@ pip install -r requirements.txt
 python src/demo_app.py --source path/to/test_leaf.jpg
 
 ```
+
+4. **Build the final LaTeX report (`latex/`):**
+See [`latex/README.md`](latex/README.md) for TeX distribution setup, VS Code LaTeX Workshop preview, and `latexmk -pdf main.tex` / `pdflatex` build steps.
 
 
 

@@ -1,0 +1,186 @@
+\documentclass[10pt,twocolumn,a4paper]{article}
+\usepackage[margin=1.7cm,columnsep=0.65cm]{geometry}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{amsmath,amssymb}
+\usepackage{siunitx}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{cite}
+
+\definecolor{notegray}{RGB}{90,90,90}
+\newcommand{\isian}[1]{\textcolor{notegray}{\textit{[Isi: #1]}}}
+\newcommand{\projecttitle}{Judul Final Project Pengolahan Citra Digital dan Visi Komputer}
+
+\title{\bfseries \projecttitle}
+\author{
+Nama Mahasiswa 1$^{1}$, Nama Mahasiswa 2$^{1}$, Nama Mahasiswa 3$^{1}$\\[-1mm]
+\small $^{1}$Program Studi ..., Fakultas Ilmu Komputer, Universitas Brawijaya\\
+\small Email: mahasiswa1@student.ub.ac.id, mahasiswa2@student.ub.ac.id, mahasiswa3@student.ub.ac.id
+}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\isian{150--250 kata. Jelaskan masalah nyata di lingkungan Universitas Brawijaya, data primer yang dikumpulkan, tahapan PCD utama, metode Machine Learning, metode Deep Learning/Computer Vision, skenario perbandingan, metrik evaluasi, hasil utama, dan kesimpulan. Jangan menulis sitasi di abstrak.}
+\end{abstract}
+
+\noindent\textbf{Keywords:} \isian{3--5 kata kunci, misalnya image processing, computer vision, machine learning, deep learning, primary dataset.}
+
+\section{Pendahuluan}
+\isian{Jelaskan latar belakang masalah dan manfaatnya. Masalah harus relevan dengan objek/kondisi yang dapat diamati di lingkungan UB. Jelaskan mengapa pendekatan pengolahan citra dan visi komputer diperlukan.}
+
+\isian{Tuliskan ringkasan penelitian/metode terkait dari referensi ilmiah yang relevan. Tunjukkan celah atau alasan project ini tetap perlu dilakukan. Hindari sekadar daftar penelitian.}
+
+\isian{Paragraf terakhir harus memuat tujuan dan kontribusi project. Contoh kontribusi: (1) dataset primer yang diambil sendiri di lingkungan UB; (2) pipeline PCD; (3) perbandingan PCD+ML, Raw+DL, dan PCD+DL; (4) evaluasi kuantitatif dan analisis error.}
+
+\section{Data Primer dan Akuisisi Data}
+\subsection{Objek dan Lokasi Akuisisi}
+\isian{Jelaskan objek, kelas/target, lokasi pengambilan data di dalam lingkungan Universitas Brawijaya, waktu/kondisi pengambilan, dan alasan objek dipilih. Data wajib primer dan dikumpulkan sendiri. Hindari objek sensitif/identitas personal sebagai target utama.}
+
+\subsection{Prosedur Akuisisi}
+\isian{Jelaskan perangkat kamera, resolusi, jarak, sudut, pencahayaan, latar, jumlah data per kelas, serta variasi kondisi. Jelaskan bagaimana kelompok menjaga konsistensi sekaligus variasi dataset.}
+
+\begin{table}[H]
+\centering
+\caption{Ringkasan dataset primer.}
+\label{tab:dataset}
+\begin{tabular}{lrrr}
+\toprule
+Kelas & Train & Validation & Test\\
+\midrule
+Kelas A & -- & -- & --\\
+Kelas B & -- & -- & --\\
+Kelas C & -- & -- & --\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Pelabelan dan Pembagian Data}
+\isian{Jelaskan proses labeling dan pembagian train/validation/test. Pastikan tidak terjadi data leakage. Jika data berupa video, frame yang sangat berdekatan tidak boleh tersebar secara sembarang ke train dan test.}
+
+\section{Metodologi}
+\subsection{Gambaran Umum Sistem}
+\isian{Tampilkan diagram pipeline lengkap: Data Primer UB $\rightarrow$ PCD $\rightarrow$ fitur/ROI $\rightarrow$ ML/DL $\rightarrow$ evaluasi $\rightarrow$ demo.}
+
+\begin{figure}[H]
+\centering
+\fbox{\parbox[c][3.0cm][c]{0.92\columnwidth}{\centering Tempatkan diagram pipeline project di sini}}
+\caption{Pipeline keseluruhan sistem.}
+\label{fig:pipeline}
+\end{figure}
+
+\subsection{Pengolahan Citra Digital}
+\isian{Jelaskan tahapan PCD yang benar-benar digunakan dan alasan teknisnya, misalnya resize, RGB/HSV/LAB, grayscale, gamma, CLAHE, mean/Gaussian/median/bilateral, sharpening, DFT/FFT, restorasi, Canny, Otsu/adaptive threshold, morfologi, atau CCL. Jangan memasukkan metode hanya untuk memperbanyak tahapan.}
+
+Contoh formulasi yang dapat digunakan bila relevan:
+\begin{equation}
+ s = 255\left(\frac{r}{255}\right)^{\gamma},
+ \label{eq:gamma}
+\end{equation}
+\isian{Definisikan seluruh simbol pada persamaan dan jelaskan pengaruh parameter $\gamma$. Ganti/tambah persamaan sesuai metode yang digunakan.}
+
+\subsection{Ekstraksi Fitur dan Machine Learning}
+\isian{Jelaskan fitur handcrafted yang digunakan, misalnya histogram warna, GLCM, LBP, HOG, Hu Moments, contour/shape, SIFT/ORB, dan lain-lain. Jelaskan minimal dua metode ML klasik yang dibandingkan, misalnya SVM, Random Forest, atau KNN. Sertakan parameter penting.}
+
+\subsection{Deep Learning / Computer Vision}
+\isian{Jelaskan model DL/CV yang digunakan, misalnya CNN, MobileNet, YOLO, U-Net, Mask R-CNN, atau model lain yang sesuai. Jelaskan input, training/transfer learning, augmentasi, hyperparameter utama, dan output model.}
+
+\subsection{Skenario Eksperimen}
+Tiga eksperimen minimum yang \textbf{wajib} dibandingkan adalah:
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{PCD + Handcrafted Features + Machine Learning};
+    \item \textbf{Raw Image + Deep Learning};
+    \item \textbf{PCD + Deep Learning}.
+\end{enumerate}
+\isian{Tambahkan ablation study bila memungkinkan, misalnya Raw $\rightarrow$ +CLAHE $\rightarrow$ +Filtering $\rightarrow$ +Segmentation, untuk menunjukkan dampak setiap tahapan PCD.}
+
+\section{Hasil dan Pembahasan}
+\subsection{Hasil Pengolahan Citra}
+\isian{Tampilkan citra sebelum dan sesudah PCD. Jangan hanya menyatakan ``lebih baik''; jelaskan perubahan yang terjadi dan hubungkan dengan kebutuhan model.}
+
+\begin{figure}[H]
+\centering
+\fbox{\parbox[c][3.0cm][c]{0.92\columnwidth}{\centering Contoh: Raw | CLAHE | Filtering | Segmentasi}}
+\caption{Contoh hasil tahapan pengolahan citra.}
+\label{fig:pcdresult}
+\end{figure}
+
+\subsection{Hasil Machine Learning dan Deep Learning}
+\begin{table}[H]
+\centering
+\caption{Perbandingan hasil eksperimen utama.}
+\label{tab:result}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lcccc}
+\toprule
+Metode & Accuracy & Precision & Recall & F1\\
+\midrule
+PCD + ML-1 & -- & -- & -- & --\\
+PCD + ML-2 & -- & -- & -- & --\\
+Raw + DL & -- & -- & -- & --\\
+PCD + DL & -- & -- & -- & --\\
+\bottomrule
+\end{tabular}}
+\end{table}
+\isian{Sesuaikan metrik dengan tugas. Object detection: Precision, Recall, mAP@0.5, mAP@0.5:0.95. Segmentation: IoU dan Dice. Counting: MAE/RMSE. Tracking: metrik tracking yang relevan.}
+
+\subsection{Analisis Pengaruh PCD}
+Salah satu bentuk analisis sederhana adalah:
+\begin{equation}
+\Delta F1 = F1_{\mathrm{PCD+Model}} - F1_{\mathrm{Raw+Model}}.
+\end{equation}
+\isian{Analisis apakah preprocessing meningkatkan atau justru menurunkan performa. Jelaskan penyebabnya berdasarkan karakteristik data, bukan hanya angka.}
+
+\subsection{Analisis Keberhasilan dan Kegagalan}
+\isian{Tampilkan beberapa contoh prediksi benar dan salah. Analisis penyebab error: pencahayaan, blur, occlusion, background, objek kecil, kemiripan antarkelas, segmentasi gagal, dan sebagainya.}
+
+\subsection{Efisiensi dan Kelayakan Implementasi}
+\isian{Jika relevan, laporkan waktu inferensi, ukuran model, kebutuhan komputasi, atau FPS. Bahas apakah sistem realistis untuk digunakan pada skenario yang diusulkan.}
+
+\section{Demo / Prototipe Sistem}
+\isian{Jelaskan bentuk demo final: input citra/video, proses utama, output prediksi/deteksi/segmentasi/tracking, serta cara pengguna menjalankan sistem. Sertakan screenshot antarmuka bila ada.}
+
+\section{Pembagian Kontribusi Anggota}
+\begin{table}[H]
+\centering
+\caption{Kontribusi anggota kelompok.}
+\label{tab:contribution}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{p{2.4cm}p{5.2cm}}
+\toprule
+Anggota & Kontribusi Utama\\
+\midrule
+Mahasiswa 1 & Data primer, EDA, dan Pengolahan Citra Digital.\\
+Mahasiswa 2 & Ekstraksi fitur, Machine Learning, dan evaluasi ML.\\
+Mahasiswa 3 & Deep Learning/Computer Vision, integrasi, dan demo.\\
+\bottomrule
+\end{tabular}}
+\end{table}
+\isian{Tuliskan kontribusi aktual dan spesifik. Akuisisi data tetap harus melibatkan seluruh anggota. Semua anggota wajib memahami keseluruhan pipeline.}
+
+\section{Kesimpulan}
+\isian{Jawab tujuan project secara ringkas berdasarkan hasil. Nyatakan metode yang diuji, dampak PCD, perbandingan ML dan DL, keterbatasan, serta satu arah pengembangan yang realistis. Jangan memasukkan hasil baru.}
+
+\section*{Pernyataan Dataset Primer}
+Kami menyatakan bahwa dataset utama pada project ini merupakan \textbf{data primer yang dikumpulkan sendiri oleh kelompok di dalam lingkungan Universitas Brawijaya}. \isian{Tambahkan ringkasan lokasi dan periode akuisisi.}
+
+\section*{Ketersediaan Kode dan Data}
+\isian{Tuliskan tautan repository/folder pengumpulan yang ditentukan dosen. Jangan membuka data yang mengandung informasi sensitif.}
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}
