@@ -1,0 +1,6 @@
+.env
+.agents/
+data/
+models/
+
+.DS_Store
